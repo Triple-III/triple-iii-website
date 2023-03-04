@@ -1,0 +1,256 @@
+html, body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+body {
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  //background-color: #242424;
+  background-color: black;
+  font-family: 'kanit', sans-serif;
+}
+
+nav {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  opacity: 0;
+  animation: navbarFadeIn 1s ease-in-out forwards;
+
+  //svg {
+  //  color : white;
+  //  stroke: white;
+  //}
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    &:first-child{
+      gap: 1rem;
+    }
+
+    &:last-child{
+      gap: .4rem;
+    }
+  }
+}
+
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translate3d(-50%, 30%, 0);
+}
+
+.hero {
+  text-align: center;
+  margin: 5vw 0;
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0;
+    line-height: 1;
+    font-size: calc(80vw / 10);
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      animation: titleFadeIn .5s ease-in-out forwards;
+      animation-delay: 1s - 300ms;
+      transform: translateY(100%);
+    }
+
+    &:last-child {
+      color: transparent;
+      background-color: transparent;
+      -webkit-text-stroke-width: calc(300vw / 800);
+      -webkit-text-stroke-color: white;
+      //margin-top: -1rem;
+      span {
+        animation-delay: 1s + 1s / 2 - 600ms;
+      }
+    }
+  }
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-grow: 1;
+  gap: 1rem;
+
+  > div {
+    position: relative;
+    overflow: hidden;
+    &:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: black;
+      transform: translateY(0%);
+      animation: rideauFadeIn .5s ease-in-out forwards;
+      animation-delay: 1s + 1s - 300ms;
+    }
+
+    &:nth-child(1) {
+      &:after{
+        animation-delay: calc(1s + 1s - 300ms);
+      }
+    }
+    &:nth-child(2) {
+      &:after{
+        animation-delay: 1s + 1s - 300ms + .5s;
+      }
+    }
+    &:nth-child(3) {
+      &:after{
+        animation-delay: 1s + 1s - 300ms + 1s;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+  }
+}
+
+@keyframes navbarFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes titleFadeIn {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes rideauFadeIn {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #3178c6aa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
