@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="fr">
+
 <header>
     <meta charset="UTF-8" />
     <link rel="icon" href="public/III Logo.png" />
@@ -7,6 +10,7 @@
     <title>Triple III</title>
 </header>
 
+<body>
 <nav>
     <img src ="public/III Logo.png" width = 60 />
     <ul>
