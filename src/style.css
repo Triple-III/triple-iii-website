@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:kanit,sans-serif;
+}
+
 html,body{
     height:100vh;
     padding:0;
@@ -7,32 +14,116 @@ body{
     color-scheme:dark;
     color:#ffffffde;
     background-color:#000;
-    font-family:kanit,sans-serif
 }
 nav{
-    background-color: #0c5983;
-    text-transform:uppercase;
-    display:flex;
-    align-items:center;
-    width:100%;
-    justify-content:space-between;
-    padding:0 1rem;
-    opacity:0;
+    position: relative;
+    background: #0c5983;
+    align-items: center;
+    border-radius: 20px;
+    opacity: 0;
     animation:navbarFadeIn 1s ease-in-out forwards
 }
-nav ul{
-    padding:0;
-    margin:0;
-    list-style:none;
-    display:flex;
-    align-items:center
+nav ul {
+    display: flex;
+    float: right;
+    width: 320px;
+    animation:navbarButtonFadeIn 1s ease-in-out forwards
 }
-nav ul:first-child{
-    gap:1rem
+
+nav ul li{
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
 }
-nav ul:last-child{
-    gap:.4rem
+nav ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
 }
+nav ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color: white;
+}
+
+nav ul li.active a .icon{
+    transform: translateY(35px);
+}
+nav ul li a .text{
+    position: absolute;
+    color: white;
+    transform: translateY(20px);
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+nav ul li.active a .text{
+    transform: translateY(-20px);
+    opacity: 1;
+}
+
+.indicator{
+    position: absolute;
+    top: 50%;
+    width: 70px;
+    height: 70px;
+    background: #e22a28;
+    border-radius: 50%;
+    border: 4px solid black;
+    transition: 0.5s;
+}
+
+.indicator::before{
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    left: -20px;
+    width: 20px;
+    height: 20px;
+    /*background: white;*/
+    border-bottom-right-radius: 20px;
+    box-shadow: 1px 10px 0 0 black;
+}
+
+.indicator::after{
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    right: -20px;
+    width: 20px;
+    height: 20px;
+    /*background: white;*/
+    border-bottom-left-radius: 20px;
+    box-shadow: -1px 10px 0 0 black;
+}
+
+nav ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(70px * 0));
+}
+nav ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(70px * 1));
+}
+nav ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(70px * 2));
+}
+nav ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(70px * 3));
+}
+
 .logo{
     font-size: 30px;
     display:flex;
@@ -109,6 +200,15 @@ nav ul:last-child{
     }
     to{
         transform:translateY(0);
+        opacity:1
+    }
+}
+@keyframes navbarButtonFadeIn{
+    0%{
+        opacity:0;
+        transform:translateX(100%)
+    }
+    to{
         opacity:1
     }
 }
