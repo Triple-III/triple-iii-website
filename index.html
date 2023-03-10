@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <header>
+    <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="public/III Logo.png" />
         <link href="https://fonts.cdnfonts.com/css/kanit-2" rel="stylesheet">
         <link href="src/style.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Triple III</title>
-    </header>
+    </head>
 
     <body>
-        <nav>
-            <img src ="public/III Logo.png" width = 60 />
-            <ul>
-                <li class = "list active">
-                    <a href = "index.html">
-                            <span class = "icon">
-                                <ion-icon name="locate-outline"></ion-icon>
-                            </span>
-                        <span class = "text">Accueil</span>
-                    </a>
-                </li>
-                <li class = "list">
-                    <a href = "projet.html">
-                        <span class = "icon"><ion-icon name="game-controller-outline"></ion-icon></span>
-                        <span class = "text">Projet</span>
-                    </a>
-                </li>
-                <li class = "list">
-                    <a href = "team.html">
-                        <span class = "icon"><ion-icon name="people-circle-outline"></ion-icon></span>
-                        <span class = "text">L'équipe</span>
-                    </a>
-                </li>
-                <li class = "list">
-                    <a href = "contact.html">
-                        <span class = "icon"><ion-icon name="send-outline"></ion-icon></span>
-                        <span class = "text">Contacts</span>
-                    </a>
-                </li>
-                <div class = "indicator"></div>
-            </ul>
-        </nav>
+        <header>
+<!--            <img class="logo" src="public/III Logo.png" alt="logo">-->
+
+            <nav>
+                <img src ="public/III Logo.png" width = 60 />
+                <ul>
+                    <li class = "list active">
+                        <a href="#" onclick="return show('accueil');">
+<!--                        <a href="#" onclick="return show('Page1','Page2');">-->
+                                <span class = "icon">
+                                    <ion-icon name="locate-outline"></ion-icon>
+                                </span>
+                            <span class = "text">Accueil</span>
+                        </a>
+                    </li>
+                    <li class = "list">
+                        <a href="#" onclick="return show('projet');">
+                            <span class = "icon"><ion-icon name="game-controller-outline"></ion-icon></span>
+                            <span class = "text">Projet</span>
+                        </a>
+                    </li>
+                    <li class = "list">
+                        <a href="#" onclick="return show('equipe');">
+                            <span class = "icon"><ion-icon name="people-circle-outline"></ion-icon></span>
+                            <span class = "text">L'équipe</span>
+                        </a>
+                    </li>
+                    <li class = "list">
+                        <a href="#" onclick="return show('contact');">
+                            <span class = "icon"><ion-icon name="send-outline"></ion-icon></span>
+                            <span class = "text">Contacts</span>
+                        </a>
+                    </li>
+                    <div class = "indicator"></div>
+                </ul>
+            </nav>
+        </header>
         
-        <div class = "projet">
+        <div id = "accueil">
             <div class = "hero">
                 <h1><span>Coming soon</span></h1>
                 <h1><span>StickHunt</span></h1>
@@ -61,8 +66,74 @@
                 </div>
             </div>
         </div>
+
+        <div id = "projet" style="display:none">
+            <div class = "hero">
+                <h1><span>New Game !</span></h1>
+                <h1><span>StickHunt</span></h1>
+            </div>
+
+            <div class = "images">
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+            </div>
+        </div>
+        <div id = "equipe" style="display:none">
+            <div class = "hero">
+                <h1><span>L'équipe</span></h1>
+                <h1><span>Triple III</span></h1>
+            </div>
+
+            <div class = "images">
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+            </div>
+        </div>
+        <div id = "contact" style="display:none">
+            <div class = "hero">
+                <h1><span>Nous</span></h1>
+                <h1><span>Contacter</span></h1>
+            </div>
+
+            <div class = "images">
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+                <div>
+                    <img src = "public/StickHunt.png" alt = "image" />
+                </div>
+            </div>
+        </div>
+        <footer>
+            HELLO
+        </footer>
         
         <script>
+            function show(shown) {
+                document.getElementById('accueil').style.display='none'
+                document.getElementById('projet').style.display='none'
+                document.getElementById('equipe').style.display='none'
+                document.getElementById('contact').style.display='none'
+                document.getElementById(shown).style.display='block';
+                return false;
+            }
             const list = document.querySelectorAll('.list');
             function activeLink(){
                 list.forEach((item) => item.classList.remove('active'));

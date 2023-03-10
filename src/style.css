@@ -193,6 +193,15 @@ nav ul li:nth-child(4).active ~ .indicator{
     height:100%;
     object-fit:fill
 }
+
+
+
+
+
+
+
+
+
 @keyframes navbarFadeIn{
     0%{
         opacity:0;
