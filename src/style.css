@@ -11,6 +11,9 @@ html,body{
     margin:0
 }
 body{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     color-scheme:dark;
     color:#ffffffde;
     background-color:#000;
@@ -193,11 +196,32 @@ nav ul li:nth-child(4).active ~ .indicator{
     height:100%;
     object-fit:fill
 }
+.projet .timeline{
+    max-width: 1280px;
+    margin: auto;
+    display: flex;
+}
+    .projet .timeline .left{
+        flex: 1;
+        background: red;
+    }
+        .timeline .left .logos img{
+            width: 200px;
+        }
+        .timeline .left .titles{
+            font-size: 2em;
+        }
+
+    .projet .timeline .right{
+        flex: 1;
+        background: green;
+    }
 
 footer{
     position: relative;
     width: 100%;
     background: #0c5983;
+    border-radius: 20px;
     min-height: 100px;
     padding: 20px 50px;
     display: flex;
@@ -205,53 +229,52 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation:footerFadeIn 1s ease-in-out forwards
 }
 
-footer .social_icon,
-footer .menu{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 0;
-    flex-wrap: wrap;
-}
+    footer .social_icon,
+    footer .menu{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        opacity: 0;
+        flex-wrap: wrap;
+        animation:footerItemFadeIn 1s ease-in-out forwards;
+        animation-delay:3s
+    }
 
-footer .social_icon li,
-footer .menu li{
-    list-style: none;
-}
+        footer .social_icon li,
+        footer .menu li{
+            list-style: none;
+        }
 
-footer .social_icon li a
-{
-    font-size: 2em;
-    color: white;
-    margin: 0 10px;
-    display: inline-block;
-    transition: 0.5s;
-}
+        footer .social_icon li a
+        {
+            font-size: 2em;
+            color: white;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+        }
 
-footer .menu li a{
-    font-size: 2em;
-    color: white;
-    margin: 0 10px;
-    display: inline-block;
-    text-decoration: none;
-    opacity: 0.75;
-}
+        footer .menu li a{
+            font-size: 2em;
+            color: white;
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+            opacity: 0.75;
+            background: #e22a28;
+        }
 
-footer .social_icon li a:hover{
-    transform: translateY(-10px);
-}
-footer .menu li a:hover{
-    opacity: 1;
-}
-
-
-
-
-
-
+            footer .social_icon li a:hover{
+                transform: translateY(-10px);
+            }
+            footer .menu li a:hover{
+                opacity: 1;
+            }
 
 @keyframes navbarFadeIn{
     0%{
@@ -286,5 +309,24 @@ footer .menu li a:hover{
     }
     to{
         transform:translateY(-100%)
+    }
+}
+@keyframes footerFadeIn{
+    0%{
+        opacity:0;
+        transform:translateY(100%)
+    }
+    to{
+        transform:translateY(0);
+        opacity:1
+    }
+}
+@keyframes footerItemFadeIn{
+    0%{
+        opacity:0;
+        transform:translateY(100%)
+    }
+    to{
+        opacity:1
     }
 }

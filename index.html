@@ -2,23 +2,21 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" href="public/III Logo.png" />
+        <link rel="icon" href="public/III_Logo.png" />
         <link href="https://fonts.cdnfonts.com/css/kanit-2" rel="stylesheet">
         <link href="src/style.css" rel="stylesheet">
+        <link href="src/style.scss" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Triple III</title>
     </head>
 
     <body>
         <header>
-<!--            <img class="logo" src="public/III Logo.png" alt="logo">-->
-
             <nav>
-                <img src ="public/III Logo.png" width = 60 />
+                <img src ="public/III_Logo.png" width = 60 />
                 <ul>
                     <li class = "list active">
                         <a href="#" onclick="return show('accueil');">
-<!--                        <a href="#" onclick="return show('Page1','Page2');">-->
                                 <span class = "icon">
                                     <ion-icon name="locate-outline"></ion-icon>
                                 </span>
@@ -53,7 +51,7 @@
                 <h1><span>Coming soon</span></h1>
                 <h1><span>StickHunt</span></h1>
             </div>
-        
+
             <div class = "images">
                 <div>
                     <img src = "public/StickHunt.png" alt = "image" />
@@ -67,22 +65,43 @@
             </div>
         </div>
 
-        <div id = "projet" style="display:none">
-            <div class = "hero">
-                <h1><span>New Game !</span></h1>
-                <h1><span>StickHunt</span></h1>
-            </div>
+        <div class = "projet" id = "projet" style="display:none">
+<!--            <div class = "hero">-->
+<!--                <h1><span>New Game !</span></h1>-->
+<!--                <h1><span>StickHunt</span></h1>-->
+<!--            </div>-->
 
-            <div class = "images">
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
+<!--            <div class = "images">-->
+<!--                <div>-->
+<!--                    <img src = "public/StickHunt.png" alt = "image" />-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <img src = "public/StickHunt.png" alt = "image" />-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <img src = "public/StickHunt.png" alt = "image" />-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class = "timeline">
+                <div class = "left">
+                    <div class = "logos">
+                        <img src="public/StickHunt.png">
+                    </div>
+                    <div class = "titles">
+                        <h1>L'évolution du projet</h1>
+                    </div>
+                    <div class = "descriptions"></div>
+                    <div class = "month">
+                        <h2>Décembre</h2>
+                    </div>
                 </div>
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
+                <div class = "right">
+                    <div class = "images">
+                        <div style = "background-image: url(public/III_Logo.png)"></div>
+                    </div>
                 </div>
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
-                </div>
+
             </div>
         </div>
         <div id = "equipe" style="display:none">
@@ -121,6 +140,7 @@
                 </div>
             </div>
         </div>
+
         <footer>
             <ul class = "social_icon">
                 <li><a href="#">Git</a></li>
