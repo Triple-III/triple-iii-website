@@ -4,9 +4,11 @@
         <meta charset="UTF-8" />
         <link rel="icon" href="public/III_Logo.png" />
         <link href="https://fonts.cdnfonts.com/css/kanit-2" rel="stylesheet">
-        <link href="src/style.css" rel="stylesheet">
-        <link href="src/style.scss" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="src/style.css" rel="stylesheet">
+
+        <script type="text/javascript" src="app.js" defer></script>
         <title>Triple III</title>
     </head>
 
@@ -46,7 +48,7 @@
             </nav>
         </header>
         
-        <div id = "accueil">
+        <section class = "accueil" id = "accueil">
             <div class = "hero">
                 <h1><span>Coming soon</span></h1>
                 <h1><span>StickHunt</span></h1>
@@ -63,83 +65,143 @@
                     <img src = "public/StickHunt.png" alt = "image" />
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class = "projet" id = "projet" style="display:none">
-<!--            <div class = "hero">-->
-<!--                <h1><span>New Game !</span></h1>-->
-<!--                <h1><span>StickHunt</span></h1>-->
-<!--            </div>-->
+        <section class = "projet" id = "projet" style="display:none">
+            <div class = "hero">
+                <h1><span>New Game !</span></h1>
+                <h1><span>StickHunt</span></h1>
+            </div>
 
-<!--            <div class = "images">-->
-<!--                <div>-->
-<!--                    <img src = "public/StickHunt.png" alt = "image" />-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <img src = "public/StickHunt.png" alt = "image" />-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <img src = "public/StickHunt.png" alt = "image" />-->
-<!--                </div>-->
-<!--            </div>-->
-
-            <div class = "timeline">
-                <div class = "left">
-                    <div class = "logos">
-                        <img src="public/StickHunt.png">
+            <div class="timeline">
+                <div class="resume">
+                    <div class="logo">
+                        <img src="public/StickHunt.png" style = "width: 100px; border-radius: 20px;">
                     </div>
-                    <div class = "titles">
-                        <h1>L'évolution du projet</h1>
+                    <div class="resume-content">
+                        <div class="title">Le début de la fin</div>
+                        <div class="text">
+                            Tout projet commence quelque part.<br>
+                            En ce qui concerne StickHunt nous avons réparti le travail de chacun,
+                            crée un espace de travail sain et optimiser pour la bonne réalisation des tâches en simultanées.<br>
+                            De plus le multijoueur fut la première tâche du projet de part son importance capitale pour notre jeu.
+                        </div>
                     </div>
-                    <div class = "descriptions"></div>
-                    <div class = "month">
-                        <h2>Décembre</h2>
+                    <div class="resume-content">
+                        <div class="title">Les débuts sont durs</div>
+                        <div class="text">Après avoir mis en place le projet, l'équipe c'est directement mise au développement du jeu.<br>
+                            Cependant aucun membre de l'équipe n'a touché à Unity ou même fait de projet en groupe d'une telle envergure auparavant.
+                            Il a donc fallut que chaque membre de l'équipe apprenne très rapidement à utiliser tous les outils nécessaire au bon developpement de ce projet.<br>
+                            Il fallait aussi savoir comment communiquer avec le reste des membres et mettre en commun le travail de chacun sans accroc.<br>
+                            Une fois familiarisé avec l'environnement de travail l'équipe c'est mise au travail.
+                            La carte, les différentes interfaces ainsi que les fonctionnalités au centre du gameplay fut entamées.<br>
+                            Tout cela fut bien compliqué mais comme tout <b>début</b> à tout, <b>le plus compliqué c'est de commencer</b>.
+                        </div>
+                    </div>
+                    <div class="resume-content">
+                        <div class="title">Continuer c'est sur</div>
+                        <div class="text">
+                            Une fois lancé plus rien ne nous arrête<br>
+                            Nous avons commencé a regrouper le travail de chacun et cela c'est réalisé sans accroc.
+                            Les premiers test ont été réalisé concernant les fonctionnalités que nous devions présentés comme :
+                            <li>Les mouvements</li>
+                            <li>Le multijoueur</li>
+                            <li>La carte</li>
+                            <li>Les interfaces</li>
+                            <li>Mise en place du site web</li>
+                        </div>
+                    </div>
+                    <div class="resume-content">
+                        <div class="title">La sécurité avant tout</div>
+                        <div class="text">
+                            La soutenance étant passée notre principale objectif dès à présent était de fournir un travail toujours aussi qualitatif. <br>
+                            Le site était notre principale préoccupation ainsi que l'implémentation de la génération aléatoire de props et de bonus sur la carte. <br>
+                            Nous devons aussi faire en sorte de pouvoir faire une partie complête en multijoueur avec tous les éléments nécéssaire au bon déroulement de celle-ci. <br>
+                        </div>
                     </div>
                 </div>
-                <div class = "right">
-                    <div class = "images">
-                        <div style = "background-image: url(public/III_Logo.png)"></div>
+
+                <!-- images -->
+                <div class="picture">
+                    <div class="image-carousel">
+                        <div class="image">
+                            <img src="images/un-nouvel-espoir.png" alt="">
+                        </div>
+                        <div class="image">
+                            <img src="images/lempire-contre-attaque.png" alt="">
+                        </div>
+                        <div class="image">
+                            <img src="images/le-retour-du-jedi.png" alt="">
+                        </div>
+                        <div class="image">
+                            <img src="images/un-nouvel-espoir.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- années -->
+                <div class="months">
+                    <div class="month-container">
+                        <div class="month"><span alt = "">Décembre</span></div>
+                        <div class="month"><span alt = "">Janvier</span></div>
+                        <div class="month"><span alt = "">Février</span></div>
+                        <div class="month"><span alt = "">Mars</span></div>
+                        <div class="month"><span alt = "">Avril</span></div>
+                        <div class="month"><span alt = "">Mai</span></div>
+                        <div class="month"><span alt = "">Juin</span></div>
+                    </div>
+                </div>
+
+                <!-- navigation -->
+                <div class = "nav">
+                    <div class="arrow-container">
+                        <ion-icon class = "left-arrow" name="arrow-back-outline" alt="" onclick="nav(event)"></ion-icon>
+                        <ion-icon class = "right-arrow" name="arrow-forward-outline" alt="" onclick="nav(event)"></ion-icon>
+                    </div>
+                    <div class="stepper-container">
+                        <div class="stepper"><span>Décembre</span></div>
+                        <div class="highlight">
+                            <div class="highlight-progress"></div>
+                        </div>
+                        <div class="stepper"><span>Janvier</span></div>
+                        <div class="highlight">
+                            <div class="highlight-progress"></div>
+                        </div>
+                        <div class="stepper"><span>Février</span></div>
+                        <div class="highlight">
+                            <div class="highlight-progress"></div>
+                        </div>
+                        <div class="stepper"><span>Mars</span></div>
+                        <div class="highlight">
+                            <div class="highlight-progress"></div>
+                        </div>
+                        <div class="stepper"><span>Avril</span></div>
+                        <div class="highlight">
+                            <div class="highlight-progress"></div>
+                        </div>
+                        <div class="stepper"><span>Mai</span></div>
+                        <div class="highlight">
+                            <div class="highlight-progress"></div>
+                        </div>
+                        <div class="stepper"><span>Juin</span></div>
                     </div>
                 </div>
 
             </div>
-        </div>
-        <div id = "equipe" style="display:none">
+        </section>
+
+        <section id = "equipe" style="display:none">
             <div class = "hero">
                 <h1><span>L'équipe</span></h1>
                 <h1><span>Triple III</span></h1>
             </div>
-
-            <div class = "images">
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
-                </div>
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
-                </div>
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
-                </div>
-            </div>
-        </div>
-        <div id = "contact" style="display:none">
+        </section>
+        <section id = "contact" style="display:none">
             <div class = "hero">
                 <h1><span>Nous</span></h1>
                 <h1><span>Contacter</span></h1>
             </div>
-
-            <div class = "images">
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
-                </div>
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
-                </div>
-                <div>
-                    <img src = "public/StickHunt.png" alt = "image" />
-                </div>
-            </div>
-        </div>
+        </section>
 
         <footer>
             <ul class = "social_icon">
@@ -172,7 +234,6 @@
             }
             list.forEach((item) => item.addEventListener('click', activeLink));
         </script>
-        <script type="module" src="/src/main.ts"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     

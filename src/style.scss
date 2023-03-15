@@ -18,66 +18,6 @@ body{
   color:#ffffffde;
   background-color:#000;
 }
-nav{
-  position: relative;
-  background: #0c5983;
-  align-items: center;
-  border-radius: 20px;
-  opacity: 0;
-  animation:navbarFadeIn 1s ease-in-out forwards
-}
-nav ul {
-  display: flex;
-  float: right;
-  width: 320px;
-  animation:navbarButtonFadeIn 1s ease-in-out forwards
-}
-
-nav ul li{
-  position: relative;
-  list-style: none;
-  width: 70px;
-  height: 70px;
-  z-index: 1;
-}
-nav ul li a{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  font-weight: 500;
-}
-nav ul li a .icon{
-  position: relative;
-  display: block;
-  line-height: 75px;
-  font-size: 1.5em;
-  text-align: center;
-  transition: 0.5s;
-  color: white;
-}
-
-nav ul li.active a .icon{
-  transform: translateY(35px);
-}
-nav ul li a .text{
-  position: absolute;
-  color: white;
-  transform: translateY(20px);
-  font-weight: 400;
-  font-size: 0.75em;
-  letter-spacing: 0.05em;
-  transition: 0.5s;
-  opacity: 0;
-}
-
-nav ul li.active a .text{
-  transform: translateY(-20px);
-  opacity: 1;
-}
 
 .indicator{
   position: absolute;
@@ -114,28 +54,90 @@ nav ul li.active a .text{
   box-shadow: -1px 10px 0 0 black;
 }
 
-nav ul li:nth-child(1).active ~ .indicator{
-  transform: translateX(calc(70px * 0));
-}
-nav ul li:nth-child(2).active ~ .indicator{
-  transform: translateX(calc(70px * 1));
-}
-nav ul li:nth-child(3).active ~ .indicator{
-  transform: translateX(calc(70px * 2));
-}
-nav ul li:nth-child(4).active ~ .indicator{
-  transform: translateX(calc(70px * 3));
+header{
+  $color_1: white;
+
+  nav {
+    position: relative;
+    background: #0c5983;
+    align-items: center;
+    border-radius: 20px;
+    opacity: 0;
+    animation: navbarFadeIn 1s ease-in-out forwards;
+    ul {
+      display: flex;
+      float: right;
+      width: 320px;
+      animation: navbarButtonFadeIn 1s ease-in-out forwards;
+      li {
+        position: relative;
+        list-style: none;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+        a {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          font-weight: 500;
+          .icon {
+            position: relative;
+            display: block;
+            line-height: 75px;
+            font-size: 1.5em;
+            text-align: center;
+            transition: 0.5s;
+            color: $color_1;
+          }
+          .text {
+            position: absolute;
+            color: $color_1;
+            transform: translateY(20px);
+            font-weight: 400;
+            font-size: 0.75em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            opacity: 0;
+          }
+        }
+        &:nth-child(1).active {
+          ~ .indicator {
+            transform: translateX(calc(70px * 0));
+          }
+        }
+        &:nth-child(2).active {
+          ~.indicator {
+            transform: translateX(calc(70px * 1));
+          }
+        }
+        &:nth-child(3).active {
+          ~.indicator {
+            transform: translateX(calc(70px * 2));
+          }
+        }
+        &:nth-child(4).active {
+          ~.indicator {
+            transform: translateX(calc(70px * 3));
+          }
+        }
+      }
+      li.active a{
+        .icon {
+          transform: translateY(35px);
+        }
+        .text {
+          transform: translateY(-20px);
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
-.logo{
-  font-size: 30px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  position:absolute;
-  left:50%;
-  transform:translate3d(-50%,30%,0)
-}
 .hero{
   text-align:center;
   margin:5vw 0
@@ -163,67 +165,198 @@ nav ul li:nth-child(4).active ~ .indicator{
 .hero h1:last-child span{
   animation-delay: 1s
 }
-.images{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  flex-grow:1;
-  gap:1rem
-}
-.images>div{
-  position:relative;
-  overflow:hidden
-}
-.images>div:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-color:#000;
-  transform:translateY(0);
-  animation:rideauFadeIn .5s ease-in-out forwards;
-  animation-delay:1.7s
-}
-.images>div:nth-child(1):after{
-  animation-delay:1.7s
-}
-.images>div:nth-child(2):after{
-  animation-delay:2.2s
-}
-.images>div:nth-child(3):after{
-  animation-delay:2.7s
-}
-.images img{
-  width:100%;
-  height:100%;
-  object-fit:fill
-}
-.projet{
+.accueil {
 
-  .timeline{
-    max-width: 1280px;
-    margin: auto;
-    display: flex;
+  .images {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    flex-grow: 1;
+    gap: 2rem
+  }
 
-    .left{
-      flex: 1;
-      background: red;
-      .logos
-    }
+  .images > div {
+    position: relative;
+    overflow: hidden
+  }
+
+  .images > div:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #000;
+    transform: translateY(0);
+    animation: rideauFadeIn .5s ease-in-out forwards;
+    animation-delay: 1.7s
+  }
+
+  .images > div:nth-child(1):after {
+    animation-delay: 1.7s
+  }
+
+  .images > div:nth-child(2):after {
+    animation-delay: 2.2s
+  }
+
+  .images > div:nth-child(3):after {
+    animation-delay: 2.7s
+  }
+
+  .images img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill
   }
 }
-.projet .timeline .left{
-  flex: 1;
-  background: red;
-}
-.timeline .left .logos img{
-  width: 200px;
-}
-.timeline .left .titles{
-  font-size: 2em;
-}
+.projet {
 
-.projet .timeline .right{
-  /*flex: 0;*/
-  background: green;
+  .timeline {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: auto;
+    display: grid;
+    grid-template-areas:'text img'
+                          'month span'
+                          'nav nav';
+    grid-template-columns: 1fr;
+    animation:timelineFadeIn 1s ease-in-out forwards;
+    opacity: 0;
+    animation-delay:1s;
+
+    .resume {
+      grid-area: text;
+      position: relative;
+      right: 5%;
+
+      .resume-content {
+        position: absolute;
+        transition: 250ms;
+      }
+
+      .logo {
+        margin-bottom: 24px;
+      }
+    }
+
+    .pictures {
+      grid-area: img;
+    }
+
+    .months {
+      grid-area: month;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 49px;
+      margin-bottom: 8px;
+      transition: 300ms;
+    }
+
+    .text {
+      font-size: 20px;
+      line-height: 30px;
+      transition: 350ms;
+    }
+
+    .image-carousel {
+      position: relative;
+      display: flex;
+      width: 422px;
+      height: 604px;
+      overflow: hidden;
+    }
+
+    .image {
+      position: absolute;
+      transition: 250ms;
+    }
+
+    .months {
+      padding-top: 20px;
+      display: flex;
+      column-gap: 15px;
+
+      .month-container {
+        position: relative;
+        display: flex;
+        flex: 1;
+      }
+
+      .month {
+        display: flex;
+        column-gap: 15px;
+        font-size: 100px;
+        position: absolute;
+        transition: 250ms;
+        transform: translateY(-100%);
+
+        span {
+          opacity: 0;
+          transition: 300ms;
+        }
+      }
+    }
+
+    .nav {
+      grid-area: nav;
+      display: flex;
+      padding-top: 5px;
+      column-gap: 100px;
+
+      .stepper {
+        opacity: 0;
+
+        span {
+          position: absolute;
+          transform: translate(-20%, 120%);
+        }
+      }
+    }
+
+    .arrow-container {
+      font-size: 30px;
+      color: #e22a28;
+      display: flex;
+      column-gap: 45px;
+      align-items: center;
+    }
+
+    .stepper-container {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      align-items: center;
+    }
+
+    .stepper {
+      width: 32px;
+      height: 32px;
+      background-color: #e22a28;
+      border-radius: 50%;
+      transition: 250ms;
+    }
+
+    .highlight {
+      height: 1px;
+      flex: 1;
+      background-color: #de9695;
+    }
+
+    .highlight-progress {
+      width: 100%;
+      height: 100%;
+      background-color: #e22a28;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 250ms;
+    }
+  }
 }
 
 footer{
@@ -251,7 +384,7 @@ footer .menu{
   opacity: 0;
   flex-wrap: wrap;
   animation:footerItemFadeIn 1s ease-in-out forwards;
-  animation-delay:3s
+  animation-delay:0.1s
 }
 
 footer .social_icon li,
@@ -299,6 +432,15 @@ footer .menu li a:hover{
   0%{
     opacity:0;
     transform:translateX(100%)
+  }
+  to{
+    opacity:1
+  }
+}
+@keyframes timelineFadeIn{
+  0%{
+    opacity:0;
+    transform:translateY(100%)
   }
   to{
     opacity:1
