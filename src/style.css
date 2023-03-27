@@ -317,6 +317,99 @@ header nav ul li.active a .text {
   transition: 250ms;
 }
 
+.equipe .container {
+  display: flex;
+  top: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.equipe .container .box {
+  margin: 10px;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background: rgba(12, 89, 131, 0.5);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.equipe .container .box::before {
+  content: "";
+  position: absolute;
+  inset: -10px 100px;
+  background: #0c5983;
+  background: linear-gradient(315deg, #04aeff, #e22a28);
+  transition: 0.5s;
+  animation: equipeAnim 4s linear infinite;
+}
+.equipe .container .box:hover .content img {
+  opacity: 0;
+}
+.equipe .container .box:hover::before {
+  inset: -20px 0px;
+}
+.equipe .container .box:after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: black;
+  border-radius: 50%;
+  z-index: 1;
+}
+.equipe .container .box .content {
+  position: absolute;
+  inset: 20px;
+  border: 6px solid #0c5983;
+  z-index: 3;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.equipe .container .box .content h2 {
+  position: relative;
+  font-size: 1.3em;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.equipe .container .box .content h2 span {
+  font-weight: 300;
+  font-size: 0.75em;
+}
+.equipe .container .box .content a {
+  position: relative;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 1.25em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.equipe .container .box .content a:hover {
+  letter-spacing: 0.2em;
+}
+.equipe .container .box .content img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 3;
+}
+
 footer {
   position: relative;
   width: 100%;
@@ -418,6 +511,14 @@ footer .menu li a:hover {
   }
   to {
     transform: translateY(-100%);
+  }
+}
+@keyframes equipeAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 @keyframes footerFadeIn {
