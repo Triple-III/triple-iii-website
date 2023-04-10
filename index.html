@@ -192,40 +192,61 @@
 
         <section class = "equipe" id = "equipe" style="display:none">
 <!--        <section class = "equipe" id = "equipe">-->
-            <div class = "hero">
-                <h1><span>L'équipe</span></h1>
-                <h1><span>Triple III</span></h1>
+            <section class = "bodyequipe" id="blur">
+                <div class = "hero">
+                    <h1><span>L'équipe</span></h1>
+                    <h1><span>Triple III</span></h1>
+                </div>
+                <div class ="container">
+                    <div class="box">
+                        <div class = "content">
+                            <img src = "images/matheo.png">
+                            <h2>Mathéo<br>Chahwan<br><span>Chef de projet</span></h2>
+                            <a href="#" onclick="toggle('popup1')">+ d'infos</a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class = "content">
+                            <img src = "images/nicolas.png">
+                            <h2>Nicolas<br> Lefevre Pontalis<br></h2>
+                            <a href="#" onclick="toggle('popup2')">+ d'infos</a>
+    
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class = "content">
+                            <img src = "images/lucas.PNG">
+                            <h2>Lucas<br>Peres</h2>
+                            <a href="#" onclick="toggle('popup3')">+ d'infos</a>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class = "content">
+                            <img src = "images/walson.png">
+                            <h2>Walson<br> René<br></h2>
+                            <a href="#" onclick="toggle('popup4')">+ d'infos</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class = "popup" id="popup1">
+                <h2>Matheo tkt</h2>
+                <a href="#" onclick="toggle('popup1')">retour</a>
             </div>
-            <div class ="container">
-                <div class="box">
-                    <div class = "content">
-                        <img src = "images/matheo.png">
-                        <h2>Mathéo<br>Chahwan<br><span>Chef de projet</span></h2>
-                        <a href="#">+ d'infos</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class = "content">
-                        <img src = "images/nicolas.png">
-                        <h2>Nicolas<br> Lefevre Pontalis<br></h2>
-                        <a href="#">+ d'infos</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class = "content">
-                        <img src = "images/lucas.PNG">
-                        <h2>Lucas<br>Peres</h2>
-                        <a href="#">+ d'infos</a>
-                    </div>
-                </div>
-                <div class="box">
-                    <div class = "content">
-                        <img src = "images/walson.png">
-                        <h2>Walson<br> René<br></h2>
-                        <a href="#">+ d'infos</a>
-                    </div>
-                </div>
+            <div class = "popup" id="popup2">
+                <h2>Nicolas tkt</h2>
+                <a href="#" onclick="toggle('popup2')">retour</a>
             </div>
+            <div class = "popup" id="popup3">
+                <h2>Lucas tkt</h2>
+                <a href="#" onclick="toggle('popup3')">retour</a>
+            </div>
+            <div class = "popup" id="popup4">
+                <h2>Walson tkt</h2>
+                <a href="#" onclick="toggle('popup4')">retour</a>
+            </div>
+
 
         </section>
 
@@ -250,26 +271,9 @@
 <!--            </ul>-->
             <p>© 2023 Triple III | All right reserved</p>
         </footer>
-        
-        <script>
-            function show(shown) {
-                document.getElementById('accueil').style.display='none'
-                document.getElementById('projet').style.display='none'
-                document.getElementById('equipe').style.display='none'
-                document.getElementById('contact').style.display='none'
-                document.getElementById(shown).style.display='block';
-                return false;
-            }
-            const list = document.querySelectorAll('.list');
-            function activeLink(){
-                list.forEach((item) => item.classList.remove('active'));
-                this.classList.add('active');
-            }
-            list.forEach((item) => item.addEventListener('click', activeLink));
-        </script>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     
     </body>
-
 </html>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

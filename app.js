@@ -7,6 +7,28 @@ const leftarrow = document.querySelector('.left-arrow')
 const steppers = document.querySelectorAll('.stepper')
 const months = document.querySelectorAll('.month')
 
+function toggle(elt){
+    const blur = document.getElementById('blur');
+    blur.classList.toggle('active')
+    const popup = document.getElementById(elt);
+    popup.classList.toggle('active')
+}
+
+function show(shown) {
+    document.getElementById('accueil').style.display='none'
+    document.getElementById('projet').style.display='none'
+    document.getElementById('equipe').style.display='none'
+    document.getElementById('contact').style.display='none'
+    document.getElementById(shown).style.display='block';
+    return false;
+}
+const list = document.querySelectorAll('.list');
+function activeLink(){
+    list.forEach((item) => item.classList.remove('active'));
+    this.classList.add('active');
+}
+list.forEach((item) => item.addEventListener('click', activeLink));
+
 function resume() {
     resum.forEach((r, i) => {
 
