@@ -154,7 +154,7 @@ header{
   display:inline-block;
   animation:titleFadeIn .5s ease-in-out forwards;
   animation-delay:.7s;
-  transform:translateY(100%)
+  transform:translateY(150%)
 }
 .hero h1:last-child{
   color:transparent;
@@ -208,13 +208,25 @@ header{
   }
 }
 .projet {
+  
+  h3{
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    opacity: 0;
+    animation:textFadeIn 1s ease-in-out forwards;
+    animation-delay:0.5s;
+  }
 
   .timeline {
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 200px;
     padding-right: 200px;
-    margin: auto;
+    //margin: auto;
     display: grid;
     grid-template-areas:'text img'
                           'month span'
@@ -223,7 +235,7 @@ header{
     animation:timelineFadeIn 1s ease-in-out forwards;
     opacity: 0;
     animation-delay:1s;
-
+    
     .resume {
       grid-area: text;
       position: relative;
@@ -364,6 +376,13 @@ header{
 }
 
 .equipe{
+  h2{
+    text-align: center;
+    margin-bottom: 20px;
+    animation:textFadeIn 1s ease-in-out forwards;
+    opacity: 0;
+    animation-delay:0.5s;
+  }
   a{
     position: relative;
     margin-top: 10px;
@@ -409,6 +428,9 @@ header{
   }
   
   .container {
+    animation:timelineFadeIn 1s ease-in-out forwards;
+    opacity: 0;
+    animation-delay:1s;
     display: flex;
     top: 20px;
     justify-content: center;
@@ -573,6 +595,15 @@ footer .menu li a:hover{
   0%{
     opacity:0;
     transform:translateY(100%)
+  }
+  to{
+    opacity:1
+  }
+}
+@keyframes textFadeIn{
+  0%{
+    opacity:0;
+    transform:translateX(100%)
   }
   to{
     opacity:1
