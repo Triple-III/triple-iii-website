@@ -159,7 +159,7 @@ header nav ul li.active a .text {
 
 .accueil .images {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   flex-grow: 1;
   gap: 2rem;
 }
