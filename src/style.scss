@@ -513,6 +513,90 @@ header{
   }
 }
 
+.contact{
+  .contactForm{
+    opacity: 0;
+    transform: translateY(100%);
+    animation:titleFadeIn 1s ease-in-out forwards;
+    animation-delay:.7s;
+    padding: 40px;
+    .inputBox{
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+      input[type = "submit"]{
+        background: #0c5983;
+        border-bottom: 2px solid white;
+      }
+      
+      input{
+        width: 100%;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #0c5983;
+        outline-style: hidden;
+        resize: none;
+        &:focus {
+          ~ {
+            span {
+              color: #0c5983;
+              font-size: 20px;
+              transform: translateY(-40px);
+            }
+          }
+        }
+        &:valid {
+          ~ {
+            span {
+              color: #0c5983;
+              font-size: 20px;
+              transform: translateY(-40px);
+            }
+          }
+        }
+      }
+      textarea{
+        width: 100%;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #e22a28;
+        outline-style: hidden;
+        &:focus {
+          ~ {
+            span {
+              color: #e22a28;
+              font-size: 20px;
+              transform: translateY(-40px);
+            }
+          }
+        }
+        &:valid {
+          ~ {
+            span {
+              color: #e22a28;
+              font-size: 20px;
+              transform: translateY(-40px);
+            }
+          }
+        }
+      }
+      span{
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        pointer-events: none;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
 footer{
   position: relative;
   width: 100%;
@@ -614,6 +698,7 @@ footer .menu li a:hover{
     transform:translateY(100%)
   }
   to{
+    opacity: 1;
     transform:translateY(0)
   }
 }

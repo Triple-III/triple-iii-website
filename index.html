@@ -275,17 +275,30 @@
 
         </section>
 
-        <section id = "contact" style="display:none">
+        <section class = "contact" id = "contact" style="display:none">
             <div class = "hero">
                 <h1><span>Nous</span></h1>
                 <h1><span>Contacter</span></h1>
             </div>
-            <form action = "https://formspree.io/f/mgebbvze" method="POST">
-                <input type="text" name="Nom" placeholder="Nom complet" required>
-                <input type="email" name="Email" placeholder="Email" required>
-                <textarea name="Message" placeholder="Message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
+            <div class = "contactForm">
+                <form action = "https://formspree.io/f/mgebbvze" method="POST">
+                    <div class = "inputBox">
+                        <input type="text" name="Nom" placeholder="Nom complet" required>
+                        <span>Nom complet</span>
+                    </div>
+                    <div class = "inputBox">
+                        <input type="email" name="Email" placeholder="Email" required>
+                        <span>Email</span>
+                    </div>
+                    <div class = "inputBox">
+                        <textarea name="Message" placeholder="Message" required></textarea>
+                        <span>Message</span>
+                    </div>
+                    <div class = "inputBox">
+                        <input type="submit" name = "" value = "Envoyer">
+                    </div>
+                </form>
+            </div>
         </section>
 
         <footer>
