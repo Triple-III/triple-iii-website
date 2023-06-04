@@ -165,8 +165,23 @@ header{
 .hero h1:last-child span{
   animation-delay: 1s
 }
+
+.btn {
+  background-color: #0c5983;
+  border-radius: 10px;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
 .accueil {
 
+  iframe{
+    opacity: 0;
+    animation:titleFadeIn .5s ease-in-out forwards;
+    animation-delay: 1s;
+  }
   .images {
     display: grid;
     grid-template-columns:repeat(2, 1fr);
